@@ -10,7 +10,7 @@ SPRING boot
 Angularjs
 UI bootstrap
 
-=============================== Setup and compiling the program
+=============================== Setup and compiling the program===============
 1.Extract the project archive.
  2.Navigate to project folder
  3.Open command prompt terminal and navigate to the project root directory mentioned in the step2. 
@@ -18,8 +18,15 @@ UI bootstrap
 5. once the compile is done , enter maven command "mvn clean package" which will create the executable jar file of this project. 
 Once build is successful ,you can see the generated jar file under '/rootdir/target/' folder.
 
-================================ Running the program
+================================ Running the program===================
 1.Use the spring boot run command to run the application which will launch the Web application. 
+
+or run the prgram by runnning Spring boot starter class
+
+In the same command terminal enter the below command to run the program. $ java -cp target/darkskyweatherapplication-0.0.1-SNAPSHOT.jar \com.ram.darksky.starter.DarkskyApplicationStarter
+If the above command doesn't identify the main class , use the below command. $ java -cp target/darkskyweatherapplication-0.0.1-SNAPSHOT.jar com.ram.darksky.starter.DarkskyApplicationStarter
+
+
 2.open Web browser and enter url 'http://localhost:8080/home
 3.Enter latitude and longitude values in the given input form and submit to get the forecast.
 
