@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<title>DarkSky WeatherApplication</title>
+<!-- bottstrap css -->
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../css/app.css"css" rel="stylesheet">
+
+</head>
+
+<body style="height:100%;" ng-app="weatherapp" ng-controller="weathercontroller">
+<div class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="navbar-header" style="position:relative;">
+  <h4>Weather ForeCast API</h4></div>
+  </div>
+<div style="height:100%;" >
+
+	<div style="width: 80%; height: 30%; margin: 15px 0; padding: 10px; background-color: #f8f8f8; border: 1px solid #ccc;">
+	<p>Weather forecast by latitude and longitude, by default Campbell, CA forecast will be displayed</p>
+		<form method="get" class="tab-form-demo">
+		<div class="class="form-group">
+			<fieldset>
+				<ul>
+					<label for="latitude">Latitude</label> 
+					<input type="text" style="width: 300px;" ng-pattern="/\-?[0-9]+[\.]{0,1}[0-9]*/" class="form-control" id="latitude" ng-model="latitude" placeholder="e.g. 42.9150747" ng-required="true" >
+					
+
+					<label for="longitude">Longitude</label> 
+					<input type="text" id="longitude" style="width: 300px; "  class="form-control" ng-model='longitude' placeholder="e.g. -77.784323" ng-required="true" >
+				</ul>
+			</fieldset>
+			<input type="submit" ng-click="getWeatherData(latitude,longitude)" class="btn btn-sm btn-info" value="Get Weather ForeCast" />
+		</div>
+		</form>
+	</div>
+	
+	<div class="container" style="width: 80%; height:100%; margin: 15px 0; padding: 10px; background-color: #f8f8f8; border: 1px solid #ccc;">
+	<div><textarea style="width:100%; height:500px">{{foreCastResponse| json:4 }}</textarea></div>
+	</div>
+	<div class="center">
+	<div class="description">
+            Note: We are currently having an issue with Google Maps API authentication with the existing APIkey to get the geo coorodinates by city using this API, so forecast by longitude, latitude only supported.
+                        </div>
+	</div>
+</div>
+<script
+		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+
+	<script type="text/javascript" src="../../js/app.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+</body>
+</html>
